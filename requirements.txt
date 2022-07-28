@@ -1,0 +1,11 @@
+selenium 
+mongoengine
+typing-extensions 
+behave 
+pytest
+pymongo[srv]
+scikit-learn
+spacy
+pandas
+numpy
+tweepy

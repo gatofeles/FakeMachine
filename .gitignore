@@ -1,0 +1,6 @@
+.vscode
+Pipfile
+Pipfile.lock
+.idea
+venv
+driver

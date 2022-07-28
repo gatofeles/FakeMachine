@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  hub:
+    image: selenium/hub:3.141.59
+    ports:
+      - 4444:4444
+  
+  chrome1:
+    image: selenium/node-chrome:3.141.59
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+      NODE_MAX_SESSION: 10
+      NODE_MAX_INSTANCES: 10
+
+  fakebros:
+    depends_on:
+      - chrome1
+    environment: 
+      TWITTERTOKEN: token
+      FAKE: mongoDatabse
+      BEARERTOKEN: token
+      APIKEY: key
+      APISECRET: secret
+      TOKENSECRET: token-secret
+    build: .
